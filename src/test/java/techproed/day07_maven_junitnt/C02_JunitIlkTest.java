@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class C02_BeforeAfter {
+public class C02_JunitIlkTest {
     /*
        Notasyonlara sahip methodlar olusturabilmek icin mouse+sag tik +generate(kisayol alt + insert) yaparak
    after methodu icin teardown'u seceriz.

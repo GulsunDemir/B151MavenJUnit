@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class C02_BeforeAfter {
+public class C02_JunitIlkTest {
 
     @Before
     public void setUp() throws Exception {
