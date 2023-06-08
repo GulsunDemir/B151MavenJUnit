@@ -45,7 +45,6 @@ public class C04_CheckBoxClassWork {
             checkBox1.click();//checkbox'i click yap
         }
     }
-
     @After
     public void tearDown() throws Exception {
 

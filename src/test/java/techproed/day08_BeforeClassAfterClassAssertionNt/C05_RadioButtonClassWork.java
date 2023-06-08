@@ -33,7 +33,7 @@ public class C05_RadioButtonClassWork {
         driver.get("https://www.facebook.com");
 
         //-“Create an Account” button’una basin
-        driver.findElement(By.xpath("(//a)[3]")).click(); ////a[@role='button'])[2]
+        driver.findElement(By.xpath("(//a)[3]")).click(); // //a[@role='button'])[2]
         //-“radio buttons” elementlerini locate edin
         WebElement female = driver.findElement(By.xpath("(//*[@type='radio'])[1]"));
         WebElement male = driver.findElement(By.xpath("(//*[@type='radio'])[2]"));
