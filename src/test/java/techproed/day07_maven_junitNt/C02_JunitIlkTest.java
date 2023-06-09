@@ -1,4 +1,4 @@
-package techproed.day07_maven_junitnt;
+package techproed.day07_maven_junitNt;
 
 import org.junit.After;
 import org.junit.Before;

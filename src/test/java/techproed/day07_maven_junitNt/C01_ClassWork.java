@@ -1,4 +1,4 @@
-package techproed.day07_maven_junitnt;
+package techproed.day07_maven_junitNt;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
