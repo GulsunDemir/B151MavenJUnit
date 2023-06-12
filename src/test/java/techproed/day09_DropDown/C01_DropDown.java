@@ -9,10 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import utilities.TestBase;
 
 import java.time.Duration;
 
-public class C01_DropDown {
+public class C01_DropDown extends TestBase {
 
    /*
      DropDown:
@@ -52,11 +53,13 @@ public class C01_DropDown {
         // Yıl Drodown'undan "2020" seciniz
         WebElement dropdownYil =driver.findElement(By.xpath("//select[@id='year']"));
 
+
         Select select = new Select(dropdownYil);
 
         //select.selectByVisibleText("2020");
         //select.selectByIndex(3);
-        select.selectByValue("2020");
+        //select.selectByValue("2020");
+        ddmVisibleText(dropdownYil,"2020");
 
 
 
