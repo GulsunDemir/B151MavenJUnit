@@ -88,7 +88,7 @@ public class C03_AllertMethods extends TestBase {
         bekle(2);
 
         //        uyarıdaki metin kutusuna isminizi yazin,
-        alertPrompt("Gülsün");
+        alertSendKeys("Gülsün");
         bekle(2);
 
         //        OK butonuna tıklayın

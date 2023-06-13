@@ -12,9 +12,10 @@ import java.time.Duration;
 
 public abstract class TestBase {
     /*
-    TestBase clasına extdends ettiğimiz test classlarından ulaşabiliriz.
-    TestBase class da obje oluşturulmasın diye abstract yaptık
-     */
+     TestBase class'indan obje olusturmanin onune gecmek icin bu class'i abstract yapabiliriz
+     TestBase testBase new = TestBase(); yani bu sekilde obje olusturmanin onune gecmis oluruz
+     Bu class'a extends yaptigimiz test class'larindan ulabiliriz
+ */
    protected WebDriver driver;
     @Before
     public void setUp() throws Exception {
@@ -28,6 +29,7 @@ public abstract class TestBase {
     public void tearDown() throws Exception {
         driver.quit();
     }
+    //HARD WAIT(Bekleme Methodu)
     public void bekle(int saniye){
         try {
             Thread.sleep(saniye*1000);
@@ -41,11 +43,11 @@ public abstract class TestBase {
     public void alertDismiss(){
         driver.switchTo().alert().dismiss();
     }
-    public void alertPrompt(String text){
+    public void alertSendKeys(String text){
         driver.switchTo().alert().sendKeys(text);
     }
-    public void alertText(){
-        System.out.println(driver.switchTo().alert().getText());
+    public String alertText(){
+       return driver.switchTo().alert().getText();
     }
     public void ddmVisibleText(WebElement ddm, String secenek){
         Select select = new Select(ddm);
