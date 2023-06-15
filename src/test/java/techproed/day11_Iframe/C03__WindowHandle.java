@@ -28,6 +28,7 @@ public class C03__WindowHandle extends TestBase {
         String techproWindowHandle = driver.getWindowHandle();
         System.out.println("TECHPROEDUCATİON HANDLE: "+techproWindowHandle); //TECHPROEDUCATİON HANDLE: EDD0887A63673FE8BDE3E3B97C9D8CB5
 //Her sayfanın handle degeri uniq tir sayfalar arasinda gecis yapabilmek icin handle degerine ihtiyacim var
+
         //  Title'ın "Techpro Education | Online It Courses & Bootcamps" olduğunu test edin
         String actualTitle = driver.getTitle();
         String expectedTitle= "Techpro Education | Online It Courses & Bootcamps";
@@ -36,7 +37,8 @@ public class C03__WindowHandle extends TestBase {
 
         //  Yeni bir pencere acıp,  https://www.youtube.com sayfasına gidiniz
         driver.switchTo().newWindow(WindowType.WINDOW);  //Yeni bir pencereye driver'i tasir.
-        //WindowType.TAB ==> yeni sekme acar.
+        //WindowType.TAB ==> yeni sekme acar. sayfanin tipini belirleriz eger sekme olsaydi WindowType.TAB kullanacaktik
+
 
         driver.get("https://www.youtube.com");
         bekle(2);

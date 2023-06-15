@@ -30,7 +30,7 @@ public class C02_Iframe extends TestBase {
 
         /*
         Iframeye gecmeinin 2. yolu index iledir
-        driver.switchTo().frame(0); //Html kodlarina gidip //iframe yaptık 1 tane iframe vardı onun icin index degerini 0 aldik
+        driver.switchTo().frame(0); //Html kodlarina gidip //iframe yazdık 1 tane iframe vardı onun icin index degerini 0 aldik
         //Eger 2 tane Iframe olsaydı ve 2. Iframe'e gecmek isteseydim index'i 1 almam gerekecekti
 */
         /*
