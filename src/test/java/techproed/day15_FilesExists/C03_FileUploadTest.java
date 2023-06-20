@@ -19,7 +19,8 @@ public class C03_FileUploadTest extends TestBase {
         Eger upload yada dosyasec butonuna tikladiginizda windows penceresi aciliyorsa o webElemente sendKeys()
         metodu ile dosya gonderemeyebilirsiniz. Boyle bir durumla karsilasirsaniz Robot class'ından obje ile metodlar
         kullanarak bunu asabilirsiniz.
- */
+        */
+
         String dosyaYolu ="C:\\Users\\ASUS\\OneDrive\\Masaüstü\\SELENIUM JUNIT 2023 TR.pdf";
         //Dosya Sec butonuna basalim
         WebElement dosyaSec = driver.findElement(By.id("file-upload"));

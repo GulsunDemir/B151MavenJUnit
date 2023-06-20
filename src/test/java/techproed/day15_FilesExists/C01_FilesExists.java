@@ -23,8 +23,8 @@ public class C01_FilesExists {
     assing ederiz.
 
         NOT:
-    Windows10 sürümlerinden önceki sürümler için pratik olarak dosya yolu almak istersek
-    yolunu almak istediğimiz dosyanun üzerine gelip shift+sagKlik tusuna basarak yol olarak kopyala
+            Windows10 sürümlerinden önceki sürümler için pratik olarak dosya yolu almak istersek
+    yolunu almak istediğimiz dosyanin üzerine gelip shift+sagKlik tusuna basarak yol olarak kopyala
     seçeneği ile dosya yolunu kopyalayabiliriz.
  */
         String dosyaYolu = "C:/Users/ASUS/OneDrive/Masaüstü/SELENIUM JUNIT 2023 TR.pdf";
@@ -53,7 +53,7 @@ public class C01_FilesExists {
 
 
  */
-        //--
+        //-->Dosya yolumuz : "C:\\Users\\ASUS\\OneDrive\\Masaüstü\\Ders01 _ Kullanım Senaryosu (Use Case) Örneği.STLCpdf.pdf";
 
         String farkliYol = "";
         String isletimSistemiAdi =System.getProperty("os.name"); //-->Isletim Sistemimizin adini verir.
