@@ -59,9 +59,9 @@ public abstract class TestBase {
         wait.until(ExpectedConditions.alertIsPresent());
     }
     //FluentWait visible Methodu
-    public void visibleFluentWait(WebElement element,int saniye,int salise){
+    public void visibleFluentWait(WebElement element,int saniye,int milisalise){
         new FluentWait<>(driver).withTimeout(Duration.ofSeconds(saniye)).
-                pollingEvery(Duration.ofMillis(salise)).
+                pollingEvery(Duration.ofMillis(milisalise)).
                 until(ExpectedConditions.visibilityOf(element));
     }
 

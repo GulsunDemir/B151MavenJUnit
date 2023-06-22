@@ -16,7 +16,8 @@ public class C04_ExplicitWaitClassWork extends TestBase {
 
         //Click me to open an Alert buttonuna basalım
         driver.findElement(By.xpath("//*[@id ='alert']")).click();
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.alertIsPresent());
+        new WebDriverWait(driver, Duration.ofSeconds(20)).
+                until(ExpectedConditions.alertIsPresent());
         //Alert cikana kadar bekleyecek
 
         //Çıkan Alert'ü kapatalım

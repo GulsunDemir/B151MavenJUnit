@@ -17,7 +17,7 @@ public class C01_ExplicitWait extends TestBase {
   SELENIUM WAIT:
           IMPLICITLY WAIT --> Driver'i oluşturduktan sonra sayfadaki tüm webelementlerin etkileşime girebilmesi için
        belirtmiş olduğumuz max. (Duration.ofSecond(20)) süre kadar bekler.
-          EXPLICIT WAIT / WebDriverWait--> Bir webelementin sayfa yüklendikten sonra etkileşime girebilmesi için
+          EXPLICIT WAIT / WebDriverWait--> Bir webelementin, sayfa yüklendikten sonra etkileşime girebilmesi için
        max. belirtmiş olduğumuz süre kadar default(varsayılan) olarak yarım saniyelik aralıklarla bekler. Örneğin bir
        webelemente tıkladık ve bir alert'ün çıkması zaman alabilir, internet yoğunluğundan yada sayfanın
        performansından kaynaklı bu süreyi normalde kullandığımız Thread.sleep() ile de çözebiliriz fakat testimizi
@@ -42,7 +42,7 @@ public class C01_ExplicitWait extends TestBase {
         //Locate'ini aldigim helloWorldText webelementini gorunur olana kadar explicit wait ile bekleyecegim
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));//max 20 saniye belirttik
-        wait.until(ExpectedConditions.visibilityOf(helloWorldText));
+        wait.until(ExpectedConditions.visibilityOf(helloWorldText)); //ExpectedConditions klasindan
         //visibilityOf() methoduyla gorunur olana kadar bekler (edited)
 
         Assert.assertEquals("Hello World!",helloWorldText.getText());
@@ -87,7 +87,7 @@ public class C01_ExplicitWait extends TestBase {
         driver.findElement(By.xpath("//button")).click();
 
         //Hello World! Yazının sitede oldugunu test et
-        WebElement helloWorldText = driver.findElement(By.xpath("(//h4)[2]"));
+        WebElement helloWorldText = driver.findElement(By.xpath("(//h4)[2]"));  //
         //Locate'ini aldığımız helloWorldText webelementini görünür olana kadar explicit wait ile bekleyeceğim
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));//-->max.20 saniye belirttik
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='loading']")));
