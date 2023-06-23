@@ -1,16 +1,19 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public abstract class TestBase {
@@ -19,7 +22,8 @@ public abstract class TestBase {
      TestBase testBase new = TestBase(); yani bu sekilde obje olusturmanin onune gecmis oluruz
      Bu class'a extends yaptigimiz test class'larindan ulabiliriz
  */
-   protected WebDriver driver;
+    protected WebDriver driver;
+
     @Before
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -32,10 +36,11 @@ public abstract class TestBase {
     public void tearDown() throws Exception {
         //driver.quit();
     }
+
     //HARD WAIT(Bekleme Methodu)
-    public void bekle(int saniye){
+    public void bekle(int saniye) {
         try {
-            Thread.sleep(saniye*1000);
+            Thread.sleep(saniye * 1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -43,63 +48,95 @@ public abstract class TestBase {
 
     //Selenium Wait/Explicit Wait
     //visibilityOf(element) methodu
-    public void visibleWait(WebElement element,int saniye){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(saniye));
+    public void visibleWait(WebElement element, int saniye) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(saniye));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     //visibilityOfElementLocated(locator) methodu
-    public void visibleWait(By locator, int saniye){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(saniye));
+    public void visibleWait(By locator, int saniye) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(saniye));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     //AlertWait methodu
-    public void alertWait(int saniye){
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(saniye));
+    public void alertWait(int saniye) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(saniye));
         wait.until(ExpectedConditions.alertIsPresent());
     }
+
     //FluentWait visible Methodu
-    public void visibleFluentWait(WebElement element,int saniye,int milisalise){
+    public void visibleFluentWait(WebElement element, int saniye, int milisalise) {
         new FluentWait<>(driver).withTimeout(Duration.ofSeconds(saniye)).
                 pollingEvery(Duration.ofMillis(milisalise)).
                 until(ExpectedConditions.visibilityOf(element));
     }
 
-
-
-    public void alertAccept(){
+    public void alertAccept() {
         driver.switchTo().alert().accept();
     }
-    public void alertDismiss(){
+
+    public void alertDismiss() {
         driver.switchTo().alert().dismiss();
     }
-    public void alertSendKeys(String text){
+
+    public void alertSendKeys(String text) {
         driver.switchTo().alert().sendKeys(text);
     }
-    public String alertText(){
-       return driver.switchTo().alert().getText();
+
+    public String alertText() {
+        return driver.switchTo().alert().getText();
     }
-    public void ddmVisibleText(WebElement ddm, String secenek){
+
+    public void ddmVisibleText(WebElement ddm, String secenek) {
         Select select = new Select(ddm);
         select.selectByVisibleText(secenek);
     }
-    public void ddmIndex(WebElement ddm, int index){
+
+    public void ddmIndex(WebElement ddm, int index) {
         Select select = new Select(ddm);
         select.selectByIndex(index);
     }
-    public void ddmByValue(WebElement ddm, String value){
+
+    public void ddmByValue(WebElement ddm, String value) {
         Select select = new Select(ddm);
         select.selectByValue(value);
     }
 
     //SwitchTo Window-1
-    public void switchToWindow(int index){
+    public void switchToWindow(int index) {
         List<String> pencereler = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(pencereler.get(index));
     }
+
     //SwitchTo Window-2
-    public void switchToWindow2(int index){
+    public void switchWindow(int index) {
         driver.switchTo().window(driver.getWindowHandles().toArray()[index].toString());
     }
+
+    //Tüm Sayfa Resmi (ScreenShot)
+    public void tumSayfaResmi() {
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "src/test/java/techproed/TumSayfaResmi/screenShot" + tarih + ".jpeg";
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        try {
+            FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE), new File(dosyaYolu));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //WebElement Resmi (Webelement ScreenShot)
+    public void webElementResmi(WebElement element){
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "src/test/java/techproed/ElementResmi/WEscreenShot" + tarih + ".jpeg";
+        try {
+            FileUtils.copyFile(element.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
 }
