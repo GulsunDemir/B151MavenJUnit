@@ -42,7 +42,7 @@ public class C03_NullPointerException  {
 
         actions.doubleClick().perform();   //C03_NullPointerException.java:43
          /*
-        actions = new Actions(); atamasini yapmadigimiz icin NullPointerException hatasini aldik
+        actions = new Actions(driver); atamasini yapmadigimiz icin NullPointerException hatasini aldik
          */
     }
 

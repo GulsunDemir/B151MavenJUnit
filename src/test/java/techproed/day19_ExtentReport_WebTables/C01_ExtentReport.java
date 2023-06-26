@@ -36,7 +36,7 @@ public class C01_ExtentReport extends TestBase {
         //Raporda gozukmesini istedigimiz bilgiler icin
         extentReports.setSystemInfo("Browser","Chrome");
         extentReports.setSystemInfo("Tester","Gülsün");
-        extentHtmlReporter.config().setDocumentTitle("Extent Report");
+        extentHtmlReporter.config().setDocumentTitle("Extent Report");  //config ayarlamalar icin
         extentHtmlReporter.config().setReportName("Smoke Test Raporu");
 
         extentTest = extentReports.createTest("ExtentTest","Test Raporu");
@@ -58,7 +58,6 @@ public class C01_ExtentReport extends TestBase {
         extentTest.info("Basligin amazon icerdigi test edildi");
 
         //Arama kutusunda ipohene aratalim
-        //arama kutusunda iphone aratalım
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone", Keys.ENTER);
 
         extentTest.info("Arama kutusunda iphone aratildi");
@@ -78,6 +77,10 @@ public class C01_ExtentReport extends TestBase {
         */
 
         extentReports.flush(); //-->Bu metodu kullanmazsak raporumuz olusmaz.
+
+        //testOutput, extentReport altindaki  dosyaya Sag tikla Open in -->Browser --> Chrome
+        //testOutput, extentReport altindaki  dosyaya Sag tikla Open in -->Explore bas  cıkan klasore iki defa tikla
+
 
 
 

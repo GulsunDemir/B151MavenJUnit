@@ -15,7 +15,7 @@ import java.util.Date;
 public class C04_WebElementResmi extends TestBase {
         /*
      Bir webelementin resmini almak için önce Webelementi locate edip bir webelemente assing ederiz.
-    ve bu webelementi direk getScreenShotAs() methodunu kullanarak resmini belirttimiz dosyaya kaydederiz.
+    ve bu webelementi direkt getScreenShotAs() methodunu kullanarak resmini belirttimiz dosyaya kaydederiz.
      */
 
     @Test

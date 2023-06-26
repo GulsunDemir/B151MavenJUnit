@@ -23,12 +23,14 @@ import java.util.Date;
 import java.util.List;
 
 public abstract class TestBase {
+
     /*
      TestBase class'indan obje olusturmanin onune gecmek icin bu class'i abstract yapabiliriz
      TestBase testBase new = TestBase(); yani bu sekilde obje olusturmanin onune gecmis oluruz
      Bu class'a extends yaptigimiz test class'larindan ulabiliriz
  */
     protected WebDriver driver;
+
     protected ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
     protected ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler
     protected ExtentTest extentTest;//--> Test adınlarına eklemek istediğimiz bilgileri bu class ile oluştururuz

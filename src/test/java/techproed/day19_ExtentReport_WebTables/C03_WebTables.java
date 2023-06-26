@@ -10,18 +10,18 @@ public class C03_WebTables extends TestBase {
     //Tbody : Tablo Body'si
     //Tr : Table Row(Satır)
     //Td : Table Data(Sütun olarak adlandırılabilir)
-    /*
-WEBTABLE;
-    <table> tagı ile başlar
-        <thead> başlıklar için bu tag ile devam eder
-            <tr> basliklarin satiri
-            <th> table head
-                <td> başlıktaki veriler
-            <tbody> başlıklar altındaki verileri temsil eder
-                    <tr> table row(satır)
-                        <td> table data (tablodaki veri)
+        /*
+    WEBTABLE;
+        <table> tagı ile başlar
+            <thead> başlıklar için bu tag ile devam eder
+                <tr> basliklarin satiri
+                <th> table head
+                    <td> başlıktaki veriler
+                <tbody> başlıklar altındaki verileri temsil eder
+                        <tr> table row(satır)
+                            <td> table data (tablodaki veri)
 
- */
+     */
 
     @Test
     public void test01() {

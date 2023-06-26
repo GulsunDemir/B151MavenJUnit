@@ -75,12 +75,12 @@ public class C01_TumSayfaResmi extends TestBase {
 
         //Ekran goruntusunu alalim
         /*
-    SimpleDateFormat'i kullanarak yeni bir tarih formati olusturup bir String'e assing ederiz. Ve bunu dosya isminden once
-    belirtiriz.
+        SimpleDateFormat'i kullanarak yeni bir tarih formati olusturup bir String'e assing ederiz. Ve bunu dosya
+    isminden once belirtiriz.
  */
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
 
-        String dosyaYolu ="src/test/java/techproed/TumSayfaResmi/screenShot" +tarih+ ".png";
+        String dosyaYolu ="src/test/java/techproed/TumSayfaResmi/screenShot" +tarih+ ".png";  //jpeg uzantisi da kullanilabilir
         TakesScreenshot ts = (TakesScreenshot) driver;
 
         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
