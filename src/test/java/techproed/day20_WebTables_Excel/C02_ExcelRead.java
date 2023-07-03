@@ -27,11 +27,11 @@ public class C02_ExcelRead extends TestBase {
         Sheet sheet = workbook.getSheet("Sheet1");
 
 
-        //satırı(row) secmeliyiz
+        //5- satırı(row) secmeliyiz
         Row row = sheet.getRow(0);   // 1. satir, index 0'dan baslar.
 
 
-        //hücreyi(cell) secmeliyiz
+        //6- hücreyi(cell) secmeliyiz
         Cell cell = row.getCell(0);   //1. sütün, index 0'dan baslar.
 
 

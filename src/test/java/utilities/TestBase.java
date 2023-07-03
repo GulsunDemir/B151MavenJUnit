@@ -184,9 +184,18 @@ public abstract class TestBase {
         extentReports.attachReporter(extentHtmlReporter);//-->HTML formatında raporlamayı başlatacak
         //Raporda gözükmesini isteğimiz bilgiler için
         extentReports.setSystemInfo("Browser",browser);
-        extentReports.setSystemInfo("Tester","Erol");
+        extentReports.setSystemInfo("Tester","Gülsün");
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName(reportName);
+
+    }
+    public void click(WebElement element){
+        try {
+            element.click();
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();",element);
+        }
 
     }
 

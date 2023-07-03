@@ -24,7 +24,7 @@ public class C01_ExtentReport extends TestBase {
   */
     ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
     ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler
-    ExtentTest extentTest;//--> Test adınlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
+    ExtentTest extentTest;//--> Test adımlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
     @Test
     public void test01() {
         extentReports = new ExtentReports();
