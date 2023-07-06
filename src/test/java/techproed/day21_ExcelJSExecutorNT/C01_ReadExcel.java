@@ -32,7 +32,7 @@ public class C01_ReadExcel {
         //NOT:getLastRowNum() methodu sayfadaki son satırın sıra numarasını verir ve index 0(sıfır) dan başlar
 
 
-        //Ülke-Başkent şeklinde verileri yazdırın
+
         for (int i = 0; i < workbook.getSheet("Sheet1").getPhysicalNumberOfRows(); i++) {
             for (int j = 0; j < workbook.getSheet("Sheet1").getRow(0).getPhysicalNumberOfCells(); j++) {
                 System.out.print(workbook.getSheet("Sheet1").getRow(i).getCell(j) + "\t");

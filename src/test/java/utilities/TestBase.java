@@ -142,15 +142,16 @@ public abstract class TestBase {
     }
 
     //WebElement Resmi (Webelement ScreenShot)
-    public void webElementResmi(WebElement element){
+    public void webElementResmi(WebElement element) {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
         String dosyaYolu = "src/test/java/techproed/ElementResmi/WEscreenShot" + tarih + ".jpeg";
         try {
-            FileUtils.copyFile(element.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
+            FileUtils.copyFile(element.getScreenshotAs(OutputType.FILE), new File(dosyaYolu));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     //UploadFile Robot Class
     public void uploadFilePath(String filePath) {
         try {
@@ -176,31 +177,59 @@ public abstract class TestBase {
     }
 
     //Extent Report Methodu
-    public void extentReport(String browser,String reportName){
+    public void extentReport(String browser, String reportName) {
         extentReports = new ExtentReports();
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "testOutput/extentReports/extentReport"+tarih+".html";
+        String dosyaYolu = "testOutput/extentReports/extentReport" + tarih + ".html";
         extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
         extentReports.attachReporter(extentHtmlReporter);//-->HTML formatında raporlamayı başlatacak
         //Raporda gözükmesini isteğimiz bilgiler için
-        extentReports.setSystemInfo("Browser",browser);
-        extentReports.setSystemInfo("Tester","Gülsün");
+        extentReports.setSystemInfo("Browser", browser);
+        extentReports.setSystemInfo("Tester", "Gülsün");
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName(reportName);
 
     }
-     // Click Metodu
-    public void click(WebElement element){
+
+    // Click Metodu
+    public void click(WebElement element) {
         try {
             element.click();
         } catch (Exception e) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();",element);
+            js.executeScript("arguments[0].click();", element);
         }
     }
 
+    //
+    public void scroll(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 
 
+    //
+    public void scrollHome() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, -document.body.scrollHeiht)");
+    }
+
+    //
+    public void scrollEnd() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+    //
+    public void sendKeysJS(WebElement element,String text){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value='"+text+"'",element);
+    }
+
+    public void sendAttributeJS(WebElement element, String text){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')", element);
+    }
 
 
 }
