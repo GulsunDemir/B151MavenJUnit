@@ -189,6 +189,7 @@ public abstract class TestBase {
         extentHtmlReporter.config().setReportName(reportName);
 
     }
+     // Click Metodu
     public void click(WebElement element){
         try {
             element.click();
@@ -196,8 +197,9 @@ public abstract class TestBase {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();",element);
         }
-
     }
+
+
 
 
 

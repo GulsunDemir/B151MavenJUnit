@@ -50,8 +50,8 @@ public class C02_ExcelRead {
         //1. Satır ve 1. sütun daki bilgileri yazdıralım
         FileInputStream fis = new FileInputStream("src/test/java/resourses/Capitals (2).xlsx");
         Workbook workbook = WorkbookFactory.create(fis);
-        String satir1Sutun1=workbook.getSheet("Sheet1").getRow(0).getCell(0).toString();
-        System.out.println("1. Satır 1. Sütun Bilgisi = "+satir1Sutun1);
+        String satir1Sutun1 = workbook.getSheet("Sheet1").getRow(0).getCell(0).toString();
+        System.out.println("1. Satır 1. Sütun Bilgisi = " + satir1Sutun1);
     }
 
     @Test
@@ -62,22 +62,22 @@ public class C02_ExcelRead {
         System.out.println(workbook.getSheet("Sheet1").getRow(0).getCell(1));
         //3. Satır 1. sütun değerini yazdırın ve "France" olduğunu test edin
         String satir3Sutun1 = workbook.getSheet("Sheet1").getRow(2).getCell(0).toString();
-        System.out.println("3. Satir 1. Sütun bilgisi = "+satir3Sutun1);
-        Assert.assertEquals("France",satir3Sutun1);
+        System.out.println("3. Satir 1. Sütun bilgisi = " + satir3Sutun1);
+        Assert.assertEquals("France", satir3Sutun1);
 
         //Kullanılan satır sayısın bulun
-        System.out.println("Kullanılan Satir Sayisi : "+workbook.getSheet("Sheet1").getPhysicalNumberOfRows());
+        System.out.println("Kullanılan Satir Sayisi : " + workbook.getSheet("Sheet1").getPhysicalNumberOfRows());
         //NOT:getPhysicalNumberOfRows() methodu kullanılan yani içi dolu olan satırların sayısını verir.Index 1 den başlar
 
         //Sayfadaki satır sayısını yazdırınız
-        System.out.println("Sayfadaki Satir Sayisi : "+workbook.getSheet("Sheet1").getLastRowNum());
+        System.out.println("Sayfadaki Satir Sayisi : " + workbook.getSheet("Sheet1").getLastRowNum());
         //NOT:getLastRowNum() methodu sayfadaki son satırın sıra numarasını verir ve index 0(sıfır) dan başlar
 
 
         //Ülke-Başkent şeklinde verileri yazdırın
         for (int i = 0; i < workbook.getSheet("Sheet1").getPhysicalNumberOfRows(); i++) {
             for (int j = 0; j < workbook.getSheet("Sheet1").getRow(0).getPhysicalNumberOfCells(); j++) {
-                System.out.print(workbook.getSheet("Sheet1").getRow(i).getCell(j)+"\t");
+                System.out.print(workbook.getSheet("Sheet1").getRow(i).getCell(j) + "\t");
             }
             System.out.println();
         }
