@@ -191,44 +191,43 @@ public abstract class TestBase {
 
     }
 
-    // Click Metodu
-    public void click(WebElement element) {
+    //Click Method
+    public void click(WebElement element){
         try {
             element.click();
         } catch (Exception e) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();", element);
+            js.executeScript("arguments[0].click();",element);
         }
     }
-
-    //
-    public void scroll(WebElement element) {
+    //JS Scroll WE Method
+    public void jsScrollWE(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-
-    //
-    public void scrollHome() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, -document.body.scrollHeiht)");
-    }
-
-    //
-    public void scrollEnd() {
+    //JS Scroll END Method(Sayfanın altına)
+    public void scrollEnd(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
 
-    //
-    public void sendKeysJS(WebElement element,String text){
+    //JS Scroll HOME Method(Sayfanın üstüne)
+    public void scrollHome(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+    //JS SendKeys() Method
+    public void jsSendKeys(String text,WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].value='"+text+"'",element);
     }
 
-    public void sendAttributeJS(WebElement element, String text){
+    //JS setAttribute() Method
+    public void jsSetAttribute(String attribute,String text,WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].setAttribute('value','"+text+"')", element);
+        js.executeScript("arguments[0].setAttribute('"+attribute+"','"+text+"')",element);
     }
 
 

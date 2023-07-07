@@ -31,7 +31,8 @@ public class C02_JSExecuter_Type extends TestBase {
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("arguments[0].value='QA'",aramaKutusu);
 
-        sendKeysJS(aramaKutusu, "QA");
+
+        jsSendKeys("QA",aramaKutusu);
         aramaKutusu.submit();
 
       /*

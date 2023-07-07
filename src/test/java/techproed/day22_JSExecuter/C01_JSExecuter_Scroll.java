@@ -36,7 +36,7 @@ public class C01_JSExecuter_Scroll extends TestBase {
          js = (JavascriptExecutor) driver;
 //        js.executeScript("arguments[0].scrollIntoView(true);",weOffer);// weOffer elementi gorene kadar git kay
 
-        scroll(weOffer);
+       jsScrollWE(weOffer);
         bekle(4);
 
         // Aynı sayfada "Enroll Free" elementi görünür olacak sekilde scroll et (sayfayı kaydır)
@@ -45,7 +45,7 @@ public class C01_JSExecuter_Scroll extends TestBase {
 //        js = (JavascriptExecutor) driver;
 //        js.executeScript("arguments[0].scrollIntoView(true);",enrollFree);
 
-        scroll(enrollFree);
+        jsScrollWE(enrollFree);
         bekle(4);
 
         // Aynı sayfada "WHY US?" elementi görünür olacak şekilde scroll et (sayfayı kaydır)
@@ -57,7 +57,7 @@ public class C01_JSExecuter_Scroll extends TestBase {
 
         // Aynı sayfada tekrar "Enroll Free" elementi görünür olacak şekilde scroll et (sayfayı kaydır)
 
-        // scroll(enrollFree);
+        //  jsScrollWE(enrollFree);
         js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);",enrollFree);
 
@@ -70,7 +70,7 @@ public class C01_JSExecuter_Scroll extends TestBase {
 //        js.executeScript("arguments[0].scrollIntoView(true);",search);
 
 //        js = (JavascriptExecutor) driver;
-//        js.executeScript("window.scrollTo(0, -document.body.scrollHeiht)");
+//        js.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
 
         scrollHome();
 

@@ -9,7 +9,7 @@ import utilities.TestBase;
 
 public class C03_JSExecutor_Click extends TestBase {
      /*
-        Bir web sayfasında bazı webelementler oluşturulurken JAVASCRIPT kodlarıyla oluşturulmuş olabilir.
+        Bir web sayfasında bazı webelementler oluşturulurken "JAVASCRIPT" kodlarıyla oluşturulmuş olabilir.
     Bu webelementleri handle edebilmek için JavaScriptExecutor arayüzünü kullanmamız gerekir.
     Bir webelement JavaScript kodları ile yazılmamış olsada javaScriptExecutor ile o webelementi handle edebiliriz.
     Normal bildiğimiz methodlardan daha yavaş çalışacağı için bildiğimiz methodlar işimizi görüyorsa onları kullanırız.
