@@ -19,8 +19,8 @@ public class  C03_GetAttribute extends TestBase {
 
         //  Tarih kısmını JS ile locate ediniz.
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        //WebElement date = (WebElement) js.executeScript("return document.getElementById('checkin_date')");
-        WebElement date = (WebElement) js.executeScript("return document.querySelector(\"input[id='checkin_date']\")");
+        WebElement date = (WebElement) js.executeScript("return document.getElementById('checkin_date')");
+        //WebElement date = (WebElement) js.executeScript("return document.querySelector(\"input[id='checkin_date']\")");
         /*
         Java Script kodlarıyla yazılmış webelementleri bizim bildiğimiz findElement() methoduyla locate edemeyebiliriz.
         js executor kullanarak ister html ister java script ile yazılmış olsun bir webelementin locatini js executor

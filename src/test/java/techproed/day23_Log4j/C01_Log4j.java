@@ -24,5 +24,10 @@ public class C01_Log4j {
         logger.error("EROR");
         logger.fatal("FATAL");
         logger.warn("WARING");
+
+
+        //Root level = "EROR"  olarak degistirdigimizde sonuc olarak eror ve fatal aldık
+        //Root level = "DEBUG"  olarak degistirdigimizde sonuc olarak  HEPSINI göruruz
+        //Root level = "INFO"  olarak degistirdigimizde sonuc olarak  debug harici hepsi gelir
     }
 }
